@@ -1,0 +1,35 @@
+.start-screen {
+  background-color: #404040;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 42px;
+  h1 {
+    margin: 0;
+    font-size: 80px;
+    color: #ffffff;
+  }
+  button {
+    background-color: rgb(236, 66, 66);
+    height: 60px;
+    width: 300px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 28px;
+    &:hover {
+      background-color: red;
+      color: #ffffff;
+    }
+  }
+  div {
+    display: flex;
+    gap: 24px;
+    img {
+      height: 120px;
+    }
+  }
+}
