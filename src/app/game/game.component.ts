@@ -12,7 +12,7 @@ import { Game } from '../../models/game';
 export class GameComponent {
   pickCardAnimation = false;
   game: Game = new Game();
-  currentCard: string | undefined = '';
+  currentCard: string | any = '';
 
   trackByIndex(index: number, item: any): number {
     return index;
@@ -26,12 +26,14 @@ export class GameComponent {
   takeCard() {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
-      console.log(this.currentCard);
+      console.log('New Card: ', this.currentCard);
       this.pickCardAnimation = true;
+      console.log(this.game);
 
       setTimeout(() => {
+        this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
-      }, 1500);
+      }, 900);
     }
   }
 
