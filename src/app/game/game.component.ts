@@ -11,7 +11,8 @@ import { Game } from '../../models/game';
 })
 export class GameComponent {
   pickCardAnimation = false;
-  game: Game | undefined;
+  game: Game = new Game();
+  currentCard: string | undefined = '';
 
   trackByIndex(index: number, item: any): number {
     return index;
@@ -23,7 +24,15 @@ export class GameComponent {
   }
 
   takeCard() {
-    this.pickCardAnimation = true;
+    if (!this.pickCardAnimation) {
+      this.currentCard = this.game.stack.pop();
+      console.log(this.currentCard);
+      this.pickCardAnimation = true;
+
+      setTimeout(() => {
+        this.pickCardAnimation = false;
+      }, 1500);
+    }
   }
 
   ngOnInit(): void {
