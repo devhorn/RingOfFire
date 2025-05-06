@@ -53,6 +53,7 @@ export class GameInfoComponent implements OnInit, OnChanges {
   ];
 
   @Input() card: string = '';
+  @Input() players: number = 0;
   title: string = '';
   description: string = '';
 
