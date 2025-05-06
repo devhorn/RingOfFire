@@ -5,12 +5,16 @@
   display: flex;
   align-items: center;
   img {
-    height: 110px;
-    width: 110px;
+    height: 70px;
+    width: 70px;
     border-radius: 100%;
   }
   span {
     margin-left: 24px;
     font-size: 24px;
   }
+}
+
+.player-active {
+  background-color: lightgreen !important;
 }
